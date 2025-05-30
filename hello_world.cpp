@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-// Main function that asks for user name
+// Main function that asks for user name.
 // and prints greeting message
 int
 main()
