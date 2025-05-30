@@ -204,4 +204,4 @@ git push origin patch2 --force-with-lease
 ```
 8. Убедитеcь, что в pull-request пропали конфликтны.
 9. Вмержите pull-request `patch2 -> master`.
-Делается через сайт, шаги показаны в Part II.
+Делается через сайт, шаги показаны в Part II
