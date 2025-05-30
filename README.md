@@ -1,9 +1,8 @@
-# Homework_Lab2
 <details>
 <summary>Part I</summary>
 
 1. Создайте пустой репозиторий на сервисе github.com (или gitlab.com, или bitbucket.com).  
-[Ссылка на репозиторий](https://github.com/Kiril207/lab02)
+[Ссылка на репозиторий](https://github.com/vector2281337/cpp-hello-world.git)
 2. Выполните инструкцию по созданию первого коммита на странице репозитория, созданного на предыдещем шаге.
 3. Создайте файл ```hello_world.cpp``` в локальной копии репозитория (который должен был появиться на шаге 2). Реализуйте программу **Hello world** на языке C++ используя плохой стиль кода. Например, после заголовочных файлов вставьте строку ```using namespace std;```.
 ```sh
@@ -11,91 +10,108 @@ vim hello_world.cpp
 ```
 Откроется редактор файлов, в котором будет написана нужная программа.
 4. Добавьте этот файл в локальную копию репозитория.
-```git add .```
+```git add hello_world.cpp```
 5. Закоммитьте изменения с осмысленным сообщением.
-```git commit -m "add hello_world"```
+```git commit -m "Initial commit with bad style Hello World"```
 
 ```
-[main 14750bf] add hello world
+[main (root-commit) 47d90b6] Initial commit with bad style Hello World
  1 file changed, 7 insertions(+)
  create mode 100644 hello_world.cpp
 ```
-
-```
-git init
-
-подсказка: Using 'master' as the name for the initial branch. This default branch name
-подсказка: is subject to change. To configure the initial branch name to use in all
-подсказка: of your new repositories, which will suppress this warning, call:
-подсказка: 
-подсказка: 	git config --global init.defaultBranch <name>
-подсказка: 
-подсказка: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-подсказка: 'development'. The just-created branch can be renamed via this command:
-подсказка: 
-подсказка: 	git branch -m <name>
-Инициализирован пустой репозиторий Git в /home/Kiril207/workspace/projects/HW02/.git/
-git branch -M main
-```sh
-git remote add origin https://github.com/Kiril207/lab02.git
-git push origin main
-Перечисление объектов: 3, готово.
-Подсчет объектов: 100% (3/3), готово.
-При сжатии изменений используется до 5 потоков
-Сжатие объектов: 100% (2/2), готово.
-Запись объектов: 100% (3/3), 329 байтов | 329.00 КиБ/с, готово.
-Всего 3 (изменений 0), повторно использовано 0 (изменений 0), повторно использовано пакетов 0
-To https://github.com/Kiril207/lab02.git
- * [new branch]      main -> main
-
-```
-
 6. Изменитьте исходный код так, чтобы программа через стандартный поток ввода запрашивалось имя пользователя. А в стандартный поток вывода печаталось сообщение ```Hello world from @name```, где ```@name``` имя пользователя.\```
 
 7. Закоммитьте новую версию программы. Почему не надо добавлять файл повторно git add?
 
-```git commit -am "change programm"
 ```
+git commit -am "Add user name input"
+```
+[main 3e52154] Add user name input
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
+Ответ на вопрос:
+Файл hello_world.cpp уже был добавлен в репозиторий ранее
+Git автоматически отслеживает изменения в таких файлах
+Флаг -a в git commit -am включает эти изменения в коммит
 
 8. Запуште изменения в удалёный репозиторий.\
 
-```
+```sh
 git push origin main
 ```
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 666 bytes | 666.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/vector2281337/cpp-hello-world.git
+ * [new branch]      main -> main
 
 9. Проверьте, что история коммитов доступна в удалёный репозитории.\
-![Коммиты](https://github.com/Kiril207/lab02/commits)
-
+![Коммиты](https://github.com/vector2281337/cpp-hello-world/commits)
+<details>
 <summary>Part II</summary>
 
-1. В локальной копии репозитория создайте локальную ветку ```patch1```.\
-```git checkout -b patch1
+1. В локальной копии репозитория создайте локальную ветку ```patch1```.\`
+git checkout -b patch1
 ```
+```
+Switched to a new branch 'patch1'
+```
+
 
 2. Внесите изменения в ветке ```patch1``` по исправлению кода и избавления от ```using namespace std;```.\
 Изменим файл также через vim.
+```
 3. **commit, push** локальную ветку в удалённый репозиторий.
 ```sh
-git commit -am "fix"
-
+git commit -am "Remove using namespace std and improve style"
 git push origin patch1
 ```
+[patch1 aa4ca64] Remove using namespace std and improve style
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 394 bytes | 394.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'patch1' on GitHub by visiting:
+remote:      https://github.com/vector2281337/cpp-hello-world/pull/new/patch1
+remote: 
+To https://github.com/vector2281337/cpp-hello-world.git
+ * [new branch]      patch1 -> patch1
+
 4. Проверьте, что ветка `patch1` доступна в удалёный репозитории.
 5. Создайте pull-request `patch1 -> master`.
-
-
 Для этого на самой странице репозитория надо нажать кнопку `Compare && pull request` .
-
 
 6. В локальной копии в ветке `patch1` добавьте в исходный код комментарии.
 
 Всё также через vim добавим комментарии.
 
 7. **commit, push**.
+```sh
+git commit -am "Add code comments"
+git push origin patch1
+```
+[patch1 f5f5ad9] Add code comments
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 437 bytes | 437.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/vector2281337/cpp-hello-world.git
+   aa4ca64..f5f5ad9  patch1 -> patch1
+
+
 8. Проверьте, что новые изменения есть в созданном на **шаге 5** pull-request.\
 
-[Pull-requests](https://github.com/Kiril207/lab02/pulls?q=is%3Apr+is%3Aclosed)
+[Pull-requests](https://github.com/vector2281337/cpp-hello-world/pulls?q=is%3Apr+is%3Aclosed)
 
 9. В удалённый репозитории выполните слияние PR `patch1 -> master` и удалите ветку `patch1` в удаленном репозитории.\
 
@@ -110,47 +126,30 @@ git checkout main
 
 `git pull` - получим все изменения
 
+Your branch is up to date with 'origin/main'.
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 914 bytes | 914.00 KiB/s, done.
+From https://github.com/vector2281337/cpp-hello-world
+ * branch            main       -> FETCH_HEAD
+   3e52154..c21ede7  main       -> origin/main
+Updating 3e52154..c21ede7
+Fast-forward
+ hello_world.cpp | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+
 11. С помощью команды **git log** просмотрите историю в локальной версии ветки ```master```.
 
 ```sh
-commit 1ce3b917ef4611070ede628b64c7e34e030c934d (HEAD -> main, origin/main)
-Merge: 7c05554 8009275
-Author: Kiril207 <kirya.sherstyuk.05@mail.ru>
-Date:   Mon May 26 19:09:23 2025 +0300
-
-    Merge pull request #1 from Kiril207/patch1
-    
-    fix
-
-commit 8009275303a2921e384689ea638e00244e69c17f
-Author: Guppo207 <kirill.sherstyuk06@mail.ru>
-Date:   Mon May 26 16:08:15 2025 +0000
-
-    add comments
-
-commit 0752289db760d989764a0b5074603bb687403fa8
-Author: Guppo207 <kirill.sherstyuk06@mail.ru>
-Date:   Mon May 26 16:04:02 2025 +0000
-
-    fix
-
-commit 7c05554ed4f825b5a9a4d5430e8da038a7f0f285
-Author: Guppo207 <kirill.sherstyuk06@mail.ru>
-Date:   Mon May 26 15:59:58 2025 +0000
-
-    change programm
-
-commit 14750bf2cf8dd5d0e6181eaf9becdb6985e566f1
-Author: Guppo207 <kirill.sherstyuk06@mail.ru>
-Date:   Mon May 26 15:50:43 2025 +0000
-
-    add hello world
-
-commit de63cc2f50d11fb96bc82bbc7a3abe0c82dbab72
-Author: Guppo207 <kirill.sherstyuk06@mail.ru>
-Date:   Mon May 26 15:46:38 2025 +0000
-
-    Initial commit
+*   c21ede7 (HEAD -> main, origin/main) Merge pull request #1 from vector2281337/patch1
+|\  
+| * f5f5ad9 (origin/patch1, patch1) Add code comments
+| * aa4ca64 Remove using namespace std and improve style
+|/  
+* 3e52154 Add user name input
+* 47d90b6 Initial commit with bad style Hello World
 ```
 
 12. Удалите локальную ветку `patch1`.\
@@ -174,12 +173,25 @@ git checkout patch2 // Переход в новую ветку
 git commit -am "change style"
 git push --set-upstream origin patch2
 ```
-pull-request так же содаётся через сайт Git-Hub\
+[patch2 79cce15] change style
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 305 bytes | 305.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'patch2' on GitHub by visiting:
+remote:      https://github.com/vector2281337/cpp-hello-world/pull/new/patch2
+remote: 
+To https://github.com/vector2281337/cpp-hello-world.git
+ * [new branch]      patch2 -> patch2
+branch 'patch2' set up to track 'origin/patch2'.
 4. В ветке master в удаленном репозитории измените комментарии, например, расставьте знаки препинания, переведите комментарии на другой язык.\
 Выполняется через сайт, скрины излишни, выполнение пункта можно посмотреть в истории commit'ов репозитория.\
-5. Убедитесь, что в pull-request появились конфликтны.
-![конфликт версий](./conflict.png)
-6. Для этого локально выполните **pull + rebase** (точную последовательность команд, следует узнать самостоятельно). **Исправьте конфликты.**
+5. Убедитесь, что в pull-request появились конфликтны. Для этого локально выполните **pull + rebase** (точную последовательность команд, следует узнать самостоятельно). **Исправьте конфликты.**
 ```sh
 git pull --rebase origin main
 vim hello_world.cpp // Исправляем конфликт в файле
